@@ -1,2 +1,2 @@
-# transpipeline_nf  
-A nextflow pipeline that transforms your transcriptome data into actionable insights in a seamless flow!
+# transFlow 
+A nextflow pipeline for transcriptome quality asessment, pre-processing, _de novo_ assembly, and annotation.
