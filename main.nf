@@ -3,9 +3,10 @@
 // Enable DSL2
 nextflow.enable.dsl = 2
 
-// Import modules with different names
-include {FastQC} from "./modules/fastqc.nf"
-include {Fastp} from "./modules/fastp.nf"
+// Import modules
+include { FastQC } from "./modules/fastqc.nf"
+include { Fastp } from "./modules/fastp.nf"
+include { downloadKrakenDB } from "./modules/kraken_download.nf"
 
 // Define channels
 Channel.fromFilePairs("${params.reads}", flat: true)
@@ -13,9 +14,12 @@ Channel.fromFilePairs("${params.reads}", flat: true)
 
 // Define workflow
 workflow {
-    
-// Main workflow logic
-    main:
-    FastQC(inputFastq)
-    Fastp(inputFastq)
+
+    // Download Kraken database independently
+    downloadKrakenDB()
+
+    // Main workflow logic
+//    FastQC(inputFastq)
+//    Fastp(inputFastq)
 }
+

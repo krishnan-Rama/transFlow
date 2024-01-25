@@ -3,7 +3,7 @@ process FastQC {
 
     tag "${sample_id}"
     label 'FastQC'
-    publishDir "${params.outputDir}/fastqc", mode: 'copy'
+    publishDir "${params.outputDir}/fastqc/Psca", mode: 'copy'
 
     input:
     tuple val(sample_id), path(read1), path(read2)
