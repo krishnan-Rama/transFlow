@@ -1,4 +1,5 @@
 // fastqc.nf
+
 process FastQC {
 
     tag "${sample_id}"

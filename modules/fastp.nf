@@ -1,6 +1,6 @@
 // fastp.nf
+
 process Fastp {
-    
     tag "${sample_id}"
     label 'Fastp'
     publishDir "${params.outputDir}/fastp/Psca", mode: 'copy'
@@ -9,8 +9,7 @@ process Fastp {
     tuple val(sample_id), path(read1), path(read2)
 
     output:
-    tuple val(sample_id), path("${sample_id}_1.fastp.fastq.gz"), emit: fastq1
-    tuple val(sample_id), path("${sample_id}_2.fastp.fastq.gz"), emit: fastq2
+    tuple val(sample_id), path("${sample_id}_1.fastp.fastq.gz"), path("${sample_id}_2.fastp.fastq.gz"), emit: trimmedReads
     path "*.html", emit: report
     path "*.json", emit: json
 

@@ -1,12 +1,12 @@
 #!/usr/bin/env nextflow
 
-// Enable DSL2
 nextflow.enable.dsl = 2
 
 // Import modules
-include { FastQC } from "./modules/fastqc.nf"
-include { Fastp } from "./modules/fastp.nf"
-include { downloadKrakenDB } from "./modules/kraken_download.nf"
+include { FastQC } from './modules/fastqc.nf'
+include { Fastp } from './modules/fastp.nf'
+include { Kraken2 } from './modules/kraken.nf'
+include { curlKrakenDB } from './modules/curlkraken.nf'
 
 // Define channels
 Channel.fromFilePairs("${params.reads}", flat: true)
@@ -14,12 +14,11 @@ Channel.fromFilePairs("${params.reads}", flat: true)
 
 // Define workflow
 workflow {
+  
+  FastQC(inputFastq)
+  Fastp(inputFastq)
+  curlKrakenDB()  
+  Kraken2(Fastp.out.trimmedReads, params.krakenDb)
 
-    // Download Kraken database independently
-    downloadKrakenDB()
-
-    // Main workflow logic
-//    FastQC(inputFastq)
-//    Fastp(inputFastq)
 }
 
