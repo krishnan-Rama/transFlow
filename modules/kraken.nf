@@ -11,8 +11,9 @@ process Kraken2 {
     path params.krakenDb
 
     output:
-    path "${sample_id}_kraken2_report.txt", emit: kraken2_report
-    path "${sample_id}_kraken2_output.txt", emit: kraken2_output
+    tuple val(sample_id), path("${sample_id}_kraken2_report.txt"), path("${sample_id}_kraken2_output.txt"), emit: krakenOutputs
+    //path "${sample_id}_#.classified.fastq", emit: classified
+    //path "${sample_id}_#.unclassified.fastq", emit: unclassified
 
     script:
     """

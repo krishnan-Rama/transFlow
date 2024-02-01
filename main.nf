@@ -7,6 +7,7 @@ include { FastQC } from './modules/fastqc.nf'
 include { Fastp } from './modules/fastp.nf'
 include { Kraken2 } from './modules/kraken.nf'
 include { curlKrakenDB } from './modules/curlkraken.nf'
+include { ExtractKrakenReads } from './modules/filter_kraken.nf'
 
 // Define channels
 Channel.fromFilePairs("${params.reads}", flat: true)
@@ -15,10 +16,12 @@ Channel.fromFilePairs("${params.reads}", flat: true)
 // Define workflow
 workflow {
   
-  FastQC(inputFastq)
+  //FastQC(inputFastq)
   Fastp(inputFastq)
-  curlKrakenDB()  
-  Kraken2(Fastp.out.trimmedReads, params.krakenDb)
+  //curlKrakenDB()  
+  Kraken2(Fastp.out.trimmedReads, params.krakenDb)  
+  ExtractKrakenReads(Fastp.out.trimmedReads.combine(Kraken2.out.krakenOutputs, by: 0)
+)
 
 }
 
