@@ -8,8 +8,6 @@ process ExtractKrakenReads {
 
     input:
     tuple val(sample_id), path(trimmedRead1), path(trimmedRead2), path(krakenOutput1), path(krakenOutput2)
-    //tuple val(sample_id), path(trimmedRead1), path(trimmedRead2)
-    //tuple val(sample_id), path(krakenOutput1), path(krakenOutput2)
 
     output:
     tuple val(sample_id), path("${sample_id}_filtered_1.fastq.gz"), path("${sample_id}_filtered_2.fastq.gz"), emit: filteredReads
