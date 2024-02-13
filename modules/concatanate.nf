@@ -3,18 +3,18 @@
 process ConcatenateReads {
 
     tag "Concatenating Reads"
-    publishDir "${params.outputDir}/concatenated/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/concatenated_reads/Psca", mode: 'copy'
 
     input:
-    tuple path(trimmedRead1), path(trimmedRead2)
+    tuple val(sample_id), path(filteredRead1), path(filteredRead2)
 
     output:
-    tuple path(concatenatedRead1.fastq), path(concatenatedRead2.fastq), emit: concatenatedReads
+    tuple path("all_reads_1.fq.gz"), path("all_reads_2.fq.gz"), emit: concatenatedReads
 
     script:
     """
-    cat ${trimmedRead1.join(' ')} > concatenatedRead1.fastq
-    cat ${trimmedRead2.join(' ')} > concatenatedRead2.fastq
+    cat ${filteredRead1.join(' ')} > all_reads_1.fq.gz
+    cat ${filteredRead2.join(' ')} > all_reads_2.fq.gz
     """
 }
 
