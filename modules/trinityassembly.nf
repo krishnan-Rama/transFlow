@@ -14,7 +14,14 @@ process Trinity {
 
     script:
     """
-    Trinity --seqType fq --max_memory ${task.memory} --left ${concatenatedRead1} --right ${concatenatedRead2} --CPU ${task.cpus} --output ${sample_id}_trinity_out
+    Trinity \\
+        --seqType fq \\
+        --max_memory 100G \\
+        --left ${concatenatedRead1} \\
+        --right ${concatenatedRead2} \\
+        --CPU ${task.cpus} \\
+        --output trinity_out \\
+        --full_cleanup
     """
 }
 
