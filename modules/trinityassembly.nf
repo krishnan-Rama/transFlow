@@ -10,7 +10,8 @@ process Trinity {
     tuple path(concatenatedRead1), path(concatenatedRead2)
 
     output:
-    tuple path("Trinity.fasta"), emit: trinityFasta
+    tuple path("trinity_out.Trinity.fasta"), emit: trinityFasta
+    path "trinity_out.Trinity.fasta.gene_trans_map", emit: trans_map     
 
     script:
     """
