@@ -12,6 +12,7 @@ process Trinity {
     output:
     tuple path("trinity_out.Trinity.fasta"), emit: trinityFasta
     path "trinity_out.Trinity.fasta.gene_trans_map", emit: trans_map     
+    path "trinity_out.fasta_stats.txt", emit: trinityStats
 
     script:
     """
@@ -23,6 +24,8 @@ process Trinity {
         --CPU ${task.cpus} \\
         --output trinity_out \\
         --full_cleanup
+
+    TrinityStats.pl trinity_out.Trinity.fasta > trinity_out.fasta_stats.txt 
     """
 }
 
