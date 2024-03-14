@@ -13,7 +13,7 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 3. In the `nextflow.config` file, modify the HPC partition name and CPU/memory according to your HPC system.
 
-4. Run the pipeline `sbatch run_nextflow.sh` using `./master_transcript_pipeline_all.sh`.  
+4. Run the pipeline by executing the command `sbatch run_nextflow.sh`.  
 
 
 ### Workflow Diagram
