@@ -22,7 +22,7 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 ### Concluding Note
 
-To successfully run this pipeline, ensure that scripts in the specified `${module}` directory and `nextflow.config` are properly configured for your system. Refer to individual nextflow scripts in the `modules` directory and the configuration file for more detailed information or to modify specific behaviours of the pipeline.
+To successfully run this pipeline, ensure the configuration script `nextflow.config` is properly configured for your system (HPC partition and allocated CPU/memory). For more detailed information or to modify specific pipeline behaviours, refer to individual nextflow scripts in the `modules` directory and the configuration file.
 
 ### Author Information
 
