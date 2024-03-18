@@ -3,7 +3,7 @@
 process Fastp {
     tag "${sample_id}"
     label 'Fastp'
-    publishDir "${params.outputDir}/fastp/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/fastp", mode: 'copy'
 
     input:
     tuple val(sample_id), path(read1), path(read2)
