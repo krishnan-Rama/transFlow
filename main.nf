@@ -20,9 +20,9 @@ Channel.fromFilePairs("${params.reads}", flat: true)
 // Define workflow
 workflow {
   
-  //FastQC(inputFastq)
+  FastQC(inputFastq)
   Fastp(inputFastq)
-  //curlKrakenDB()  
+  curlKrakenDB()  
   Kraken2(Fastp.out.trimmedReads, params.krakenDb)  
   ExtractKrakenReads(Fastp.out.trimmedReads.combine(Kraken2.out.krakenOutputs, by: 0))
   rcorrector(ExtractKrakenReads.out.filteredReads)
