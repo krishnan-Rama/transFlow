@@ -1,4 +1,4 @@
-# transFlow
+# nf-transFlow
 A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing, _de novo_ assembly, and annotation.
 
 ## Installation
