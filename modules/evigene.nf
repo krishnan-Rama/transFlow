@@ -4,7 +4,7 @@ process Evigene {
 
     tag "Evigene tr2aacds classification and annotation"
     label 'evigene'
-    publishDir "${params.outputDir}/evigene/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/evigene", mode: 'copy'
 
     input:
     tuple path(trinityFasta)
