@@ -4,7 +4,7 @@ process Kraken2 {
 
     tag "${sample_id}"
     label 'Kraken2'
-    publishDir "${params.outputDir}/kraken/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/kraken", mode: 'copy'
 
     input:
     tuple val(sample_id), path(trimmedRead1), path(trimmedRead2)
