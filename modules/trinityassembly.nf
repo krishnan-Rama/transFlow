@@ -4,7 +4,7 @@ process Trinity {
 
     tag "trinity assembly"
     label 'trinity'
-    publishDir "${params.outputDir}/trinity_assembly/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/trinity_assembly", mode: 'copy'
 
     input:
     tuple path(concatenatedRead1), path(concatenatedRead2)
