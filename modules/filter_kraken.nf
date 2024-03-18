@@ -4,7 +4,7 @@ process ExtractKrakenReads {
 
     tag "${sample_id}"
     label 'KrakenTools'
-    publishDir "${params.outputDir}/kraken_filtered/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/kraken_filtered", mode: 'copy'
 
     input:
     tuple val(sample_id), path(trimmedRead1), path(trimmedRead2), path(krakenOutput1), path(krakenOutput2)
