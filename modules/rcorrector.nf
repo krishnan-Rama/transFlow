@@ -4,7 +4,7 @@ process rcorrector {
 
     tag "${sample_id}"
     label 'rcorrector'
-    publishDir "${params.outputDir}/rcorrector/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/rcorrector", mode: 'copy'
     
     input:
     tuple val(sample_id), path(filteredRead1), path(filteredRead2)
