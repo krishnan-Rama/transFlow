@@ -3,7 +3,7 @@
 process ConcatenateReads {
 
     tag "Concatenating Reads"
-    publishDir "${params.outputDir}/concatenated_reads/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/concatenated_reads", mode: 'copy'
 
     input:
     tuple val(sample_id), path(filteredRead1), path(filteredRead2)
