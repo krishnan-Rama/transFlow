@@ -5,7 +5,7 @@ process BUSCO {
     tag "busco assessment"
     label 'busco'
 
-    publishDir "${params.outputDir}/busco/Psca", mode: 'copy'
+    publishDir "${params.outputDir}/busco", mode: 'copy'
 
     input:
     tuple path(annotated_okay_fasta)
