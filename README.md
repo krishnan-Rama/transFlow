@@ -3,13 +3,13 @@ A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing,
 
 ## Installation
 
-1. Install the transpipeline resources into your HPC cluster directory in which you will be performing the assembly:  
+1. Install the transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
 
 ```
 git clone https://github.com/krishnan-Rama/transFlow.git
 ```
 
-2. Add the rawreads in the `data` directory.  
+2. Add the RNA-seq fastq reads in the `data` directory.  
 
 3. In the `nextflow.config` file, modify the HPC partition name and CPU/memory according to your HPC system.
 
