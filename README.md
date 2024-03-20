@@ -1,7 +1,7 @@
 # nf-transFlow
-A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing, _de novo_ assembly, and annotation.
+A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing, _de novo_ assembly, and functional annotation.
 
-## Installation
+## Installation and deployment
 
 1. Install the transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
 
