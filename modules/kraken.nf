@@ -4,6 +4,7 @@ process Kraken2 {
 
     tag "${sample_id}"
     label 'Kraken2'
+    time '4h'
     publishDir "${params.outputDir}/kraken", mode: 'copy'
 
     input:
