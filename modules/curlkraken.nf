@@ -1,6 +1,7 @@
 process curlKrakenDB {
     tag "Downloading Kraken DB"
     label 'krakenDB'
+    time '4h'
     publishDir "${params.outputDir}/dependencies", mode: 'copy'
 
     output:
