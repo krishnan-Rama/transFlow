@@ -4,6 +4,7 @@ process Trinity {
 
     tag "trinity assembly"
     label 'trinity'
+    time '12h'
     publishDir "${params.outputDir}/trinity_assembly", mode: 'copy'
 
     input:
