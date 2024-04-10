@@ -3,6 +3,7 @@
 process ConcatenateReads {
 
     tag "Concatenating Reads"
+    time '4h'
     publishDir "${params.outputDir}/concatenated_reads", mode: 'copy'
 
     input:
