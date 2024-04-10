@@ -4,6 +4,7 @@ process Evigene {
 
     tag "Evigene tr2aacds classification and annotation"
     label 'evigene'
+    time '6h'
     publishDir "${params.outputDir}/evigene", mode: 'copy'
 
     input:
