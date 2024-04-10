@@ -4,6 +4,7 @@ process rcorrector {
 
     tag "${sample_id}"
     label 'rcorrector'
+    time '24h'
     publishDir "${params.outputDir}/rcorrector", mode: 'copy'
     
     input:
