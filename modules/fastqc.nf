@@ -4,6 +4,7 @@ process FastQC {
 
     tag "${sample_id}"
     label 'FastQC'
+    time '2h'
     publishDir "${params.outputDir}/fastqc", mode: 'copy'
 
     input:
