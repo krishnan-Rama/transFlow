@@ -3,6 +3,7 @@
 process Fastp {
     tag "${sample_id}"
     label 'Fastp'
+    time '4h'
     publishDir "${params.outputDir}/fastp", mode: 'copy'
 
     input:
