@@ -4,6 +4,7 @@ process ExtractKrakenReads {
 
     tag "${sample_id}"
     label 'KrakenTools'
+    time '12h'
     publishDir "${params.outputDir}/kraken_filtered", mode: 'copy'
 
     input:
