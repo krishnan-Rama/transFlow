@@ -23,7 +23,7 @@ workflow {
   FastQC(inputFastq)
   Fastp(inputFastq)
   curlKrakenDB()  
-  Kraken2(Fastp.out.trimmedReads, params.krakenDb)  
+  Kraken2(Fastp.out.trimmedReads, curlKrakenDB.out.krakenDb)  
   ExtractKrakenReads(Fastp.out.trimmedReads.combine(Kraken2.out.krakenOutputs, by: 0))
   rcorrector(ExtractKrakenReads.out.filteredReads)
   ConcatenateReads(rcorrector.out.rcorrectReads)

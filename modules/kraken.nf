@@ -9,7 +9,7 @@ process Kraken2 {
 
     input:
     tuple val(sample_id), path(trimmedRead1), path(trimmedRead2)
-    path params.krakenDb
+    path krakenDb
 
     output:
     tuple val(sample_id), path("${sample_id}_kraken2_report.txt"), path("${sample_id}_kraken2_output.txt"), emit: krakenOutputs
@@ -17,7 +17,7 @@ process Kraken2 {
     script:
     """
     kraken2 \\
-        --db ${params.krakenDb} \\
+        --db ${krakenDb} \\
         --paired \\
         --output ${sample_id}_kraken2_output.txt \\
         --report ${sample_id}_kraken2_report.txt \\

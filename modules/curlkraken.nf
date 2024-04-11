@@ -1,11 +1,13 @@
+// curlkraken.nf
+
 process curlKrakenDB {
     tag "Downloading Kraken DB"
     label 'krakenDB'
-    time '4h'
+    time '4h'    
     publishDir "${params.outputDir}/dependencies", mode: 'copy'
 
     output:
-    path "kraken_standard/*"
+    path "kraken_standard", emit: krakenDb
 
     script:
     """
