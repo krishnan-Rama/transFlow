@@ -9,7 +9,7 @@ A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing,
 git clone https://github.com/krishnan-Rama/transFlow.git
 ```
 
-2. Add the RNA-seq fastq reads ({_1,_2}.fastq.gz or {_R1,_R2}.fastq.gz format) in the `raw_data` directory.  
+2. Add the RNA-seq fastq reads ({_1,_2,_R1,_R2}.fastq.gz format) in the `raw_data` directory.  
 
 3. In the `nextflow.config` file, modify the HPC partition name and CPU/memory according to your HPC system.
 
