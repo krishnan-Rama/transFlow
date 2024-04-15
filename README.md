@@ -13,7 +13,7 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 3. In the `nextflow.config` file, modify the HPC partition name (Line 14) and CPU/memory according to your HPC system.
 
-4. Change module versions in `run_nextflow.sh` script accordingly as available in your HPC cluster, if necessary. 
+4. Change module versions for singualrity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available in your HPC cluster, if necessary. 
 
 5. Run the pipeline by executing the command `sbatch run_nextflow.sh`.  
 
