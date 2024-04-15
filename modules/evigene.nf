@@ -17,7 +17,7 @@ process Evigene {
 
     script:
     """
-    /usr/local/opt/evigene-23.7.15/scripts/prot/tr2aacds.pl -mrnaseq ${trinityFasta} \\
+    /opt/evigene/scripts/prot/tr2aacds.pl -mrnaseq ${trinityFasta} \\
               -MINCDS=60 \\
               -MAXMEM=12800 \\
               -logfile \\
