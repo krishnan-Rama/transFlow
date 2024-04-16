@@ -15,7 +15,6 @@ process ExtractKrakenReads {
 
     script:
     """
-    python3 -m venv ${baseDir}/modules/kraken_bio
     source ${baseDir}/modules/kraken_bio/bin/activate    
 
     python ${baseDir}/modules/extract_kraken_reads.py \\
