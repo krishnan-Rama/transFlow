@@ -11,7 +11,7 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 2. Add the RNA-seq fastq reads ({_1,_2,_R1,_R2}.fastq.gz format) in the `raw_data` directory.  
 
-3. In the `nextflow.config` file, modify the HPC partition name (Line 14) and CPU/memory according to your HPC system.
+3. In the `nextflow.config` and `run_nextflow.sh` file, modify the HPC partition name (Line 14 & Line 4 respectively), and CPU/memory according to your HPC system.
 
 4. Change module versions for singualrity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available in your HPC cluster, if necessary. 
 
