@@ -5,7 +5,7 @@ process Evigene {
     tag "Evigene tr2aacds classification and annotation"
     label 'evigene'
     
-    publishDir "${params.outputDir}/evigene/Ea", mode: 'copy', pattern: "{okayset,dropset}/**"
+    publishDir "${params.outputDir}/evigene", mode: 'copy', pattern: "{okayset,dropset}/**"
 
     input:
     tuple path(trinityFasta)
