@@ -11,12 +11,10 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 2. Add the RNA-seq fastq reads ({_1,_2,_R1,_R2}.fastq.gz format) in the `raw_data` directory.  
 
-3. In the `nextflow.config` and `run_nextflow.sh` file, modify the HPC partition name (Line 14 & Line 4 respectively), and CPU/memory according to your HPC system.
+3. Change module versions for singualrity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available in your HPC cluster, if necessary. 
+4. Run the pipeline by executing the command `./deploy.sh`.  
 
-4. Change module versions for singualrity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available in your HPC cluster, if necessary. 
-
-5. Run the pipeline by executing the command `sbatch run_nextflow.sh`.  
-
+5. The prompt will ask you to type the preferred/available HPC partion name to submit the job, simply type the name.
 
 ### Workflow Diagram
 ![workflow](https://github.com/krishnan-Rama/transpipeline_containerised/assets/104147619/892ae381-69b3-45e8-a485-ccd50cf1794a)
