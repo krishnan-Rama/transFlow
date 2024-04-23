@@ -12,6 +12,7 @@ include { rcorrector } from './modules/rcorrector.nf'
 include { ConcatenateReads } from './modules/concatanate.nf'
 include { Trinity } from './modules/trinityassembly.nf'
 include { Evigene } from './modules/evigene.nf'
+include { BUSCO } from './modules/busco.nf'
 
 // Define channels
 Channel.fromFilePairs("${params.reads}", flat: true)
