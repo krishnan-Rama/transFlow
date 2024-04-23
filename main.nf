@@ -29,6 +29,6 @@ workflow {
   ConcatenateReads(rcorrector.out.rcorrectReads)
   Trinity(ConcatenateReads.out.concatenatedReads)
   Evigene(Trinity.out.trinityFasta)
-  //BUSCO(Evigene.out.annotated_okay_fasta)
+  BUSCO(Evigene.out.annotated_okay_fasta)
 }
 
