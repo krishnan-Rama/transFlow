@@ -5,7 +5,7 @@ process BUSCO {
     tag "busco"
     label 'busco'
 
-    publishDir "${params.outputDir}/busco/Ea", mode: 'copy', patters: "*.{busco,busco2,txt,tsv}"
+    publishDir "${params.outputDir}/busco", mode: 'copy', patters: "*.{busco,busco2,txt,tsv}"
 
     input:
     tuple path(annotated_okay_fasta)
