@@ -2,24 +2,24 @@
 
 process BUSCO {
 
-    tag "busco assessment"
+    tag "busco"
     label 'busco'
 
-    publishDir "${params.outputDir}/busco", mode: 'copy'
+    publishDir "${params.outputDir}/busco/Ea", mode: 'copy', patters: "*.{busco,txt,tsv}"
 
     input:
     tuple path(annotated_okay_fasta)
 
     output:
-    path "busco_out", emit: buscoResults
+    path "busco", emit: buscoResults
 
     script:
     """
     busco \\
-        --in ${annotated_okay_fasta} \\
-        --out busco_out \\
-        --mode transcriptome \\
+        -i ${annotated_okay_fasta} \\
+        -m trans \\
+        -o busco \\
         --auto-lineage-euk \\
-        --cpu ${task.cpus}
+        -c ${task.cpus}
     """
 }
