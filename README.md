@@ -1,5 +1,14 @@
 # nf-transFlow
-A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing, _de novo_ assembly, and functional annotation.
+
+A Nextflow (DSL2) pipeline designed for comprehensive transcriptome analysis including quality assessment, pre-processing, _de novo_ assembly, and functional annotation. This pipeline is specifically optimized for deployment on high-performance computing (HPC) clusters.
+
+## Key Features
+
+- **Transcriptome Quality Assessment**: Ensures high-quality data processing with integrated quality checks.
+- **Pre-processing**: Streamlines the handling of RNA-seq data to prepare for assembly.
+- **De Novo Assembly**: Assembles transcripts from RNA-seq data without the need for a reference genome.
+- **Functional Annotation**: Annotates assembled transcripts to provide insights into gene function and expression.
+- **HPC Optimization**: Designed to efficiently utilize HPC resources for scalable and fast transcriptome analysis.
 
 ## Installation and deployment
 
