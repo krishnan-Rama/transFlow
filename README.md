@@ -1,6 +1,6 @@
 # nf-transFlow
 
-A Nextflow (DSL2) pipeline designed for comprehensive transcriptome analysis including quality assessment, pre-processing, _de novo_ assembly, and functional annotation. This pipeline is specifically optimized for deployment on high-performance computing (HPC) clusters.
+A Nextflow (DSL2) pipeline designed for comprehensive transcriptome analysis including quality assessment, pre-processing, _de novo_ assembly, and functional annotation. This pipeline is specifically optimized for deployment on high-performance computing (HPC) clusters and executed _via_ Slurm Workload Manager.
 
 ## Key Features
 
