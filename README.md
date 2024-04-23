@@ -3,7 +3,7 @@ A Nextflow (DSL2) pipeline for transcriptome quality assessment, pre-processing,
 
 ## Installation and deployment
 
-1. Install the transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
+1. Install the nf-transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
 
 ```
 git clone https://github.com/krishnan-Rama/transFlow.git
