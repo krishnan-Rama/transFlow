@@ -15,5 +15,5 @@ sed -i "s/<HPC queue>/$hpc_queue/g" nextflow.config
 sbatch run_nextflow.sh
 
 # Optionally, restore the original script (uncomment the next line to enable)
-# mv run_nextflow.sh.bak run_nextflow.sh
+mv run_nextflow.sh.bak run_nextflow.sh
 
