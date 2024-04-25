@@ -5,7 +5,7 @@ process Trinity {
     tag "trinity assembly"
     label 'trinity'
     time '72h'
-    publishDir "${params.outputDir}/trinity_assembly/Mamestra", mode: 'copy'
+    publishDir "${params.outputDir}/trinity_assembly", mode: 'copy'
 
     input:
     tuple path(concatenatedRead1), path(concatenatedRead2)
