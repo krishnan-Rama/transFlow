@@ -5,7 +5,7 @@ process trinitymapping {
     tag "${sample_id}"
     label 'trinitymapping'
 
-    publishDir "${params.outputDir}/trinitymapping/Mamestra", mode: 'copy', pattern: '*'
+    publishDir "${params.outputDir}/trinitymapping", mode: 'copy', pattern: '*'
 
     input:
     tuple path(annotated_okay_fasta)
