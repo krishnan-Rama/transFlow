@@ -5,7 +5,7 @@ process Trinity_stats {
     tag "trinity assembly"
     label 'trinity'
     time '12h'
-    publishDir "${params.outputDir}/trinity_stats/Mamestra", mode: 'copy'
+    publishDir "${params.outputDir}/trinity_stats", mode: 'copy'
 
     input:
     tuple path(trinityFasta)
