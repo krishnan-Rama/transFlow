@@ -4,7 +4,7 @@ process FastQC_2 {
 
     tag "${sample_id}"
     label 'FastQC'
-    publishDir "${params.outputDir}/fastqc_prep/Mamestra", mode: 'copy'
+    publishDir "${params.outputDir}/fastqc_prep", mode: 'copy'
 
     input:
     tuple val(sample_id), path(rcorrectRead1), path(rcorrectRead1)
