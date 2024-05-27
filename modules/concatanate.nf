@@ -13,8 +13,8 @@ process ConcatenateReads {
 
     script:
     """
-    def read1_files = rcorrectRead1.collect { it.toString() }.join(" ")
-    def read2_files = rcorrectRead2.collect { it.toString() }.join(" ")    
+    cat ${rcorrectRead1.join(" ")} > all_reads_1.fq.gz
+    cat ${rcorrectRead2.join(" ")} > all_reads_2.fq.gz
     """
 }
 
