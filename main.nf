@@ -33,7 +33,7 @@ workflow {
   rcorrector(ExtractKrakenReads.out.filteredReads)
   FastQC_2(rcorrector.out.rcorrectReads)
   ConcatenateReads(rcorrector.out.rcorrectReads)
-  Trinity(ConcatenateReads.out.concatenatedReads)
+  Trinity(ConcatenateReads.out.concatenatedRead1, ConcatenateReads.out.concatenatedRead2)  
   Evigene(Trinity.out.trinityFasta)
   Trinity_stats(Trinity.out.trinityFasta, Evigene.out.annotated_okay_fasta)
   BUSCO(Evigene.out.annotated_okay_fasta, Trinity.out.trinityFasta)
