@@ -10,6 +10,12 @@ A Nextflow (DSL2) pipeline designed for comprehensive transcriptome analysis inc
 - **Functional Annotation**: Annotates assembled transcripts to provide insights into gene function and expression.
 - **HPC Optimization**: Designed to efficiently utilize HPC resources for scalable and fast transcriptome analysis.
 
+## Dependecies 
+
+To use this pipeline you will need:
+- Nextflow >= 23.04.1
+- Singularity >= 3.8.7
+
 ## Installation and deployment
 
 1. Install the nf-transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
@@ -20,10 +26,11 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 2. Add the RNA-seq fastq reads ({_1,_2,_R1,_R2}.fastq.gz format) in the `raw_data` directory.  
 
-3. Change module versions (if applicable) for singualrity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available on your HPC cluster, if necessary. 
-4. Run the pipeline by executing the command `./deploy.sh`  
+3. Change module versions (if applicable) for singularity and nextflow (prerequisites) in `run_nextflow.sh` script accordingly as available on your HPC cluster, if necessary.
 
-5. The prompt will ask you to type the preferred/available HPC partion name to submit the job, simply type the name.
+4.  Run the pipeline by executing the command `./deploy.sh`  
+
+6. The prompt will ask you to type the preferred/available HPC partition name to submit the job; simply type the name.
 
 ### Workflow Diagram
 ![workflow](https://github.com/krishnan-Rama/transpipeline_containerised/assets/104147619/892ae381-69b3-45e8-a485-ccd50cf1794a)
