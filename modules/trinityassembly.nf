@@ -9,6 +9,7 @@ process Trinity {
     input:
     path concatenatedRead1
     path concatenatedRead2
+    val SPECIES_IDENTIFIER
 
     output:
     path("trinity_out.Trinity.fasta"), emit: trinityFasta
@@ -24,6 +25,8 @@ process Trinity {
         --CPU ${task.cpus} \\
         --output trinity_out \\
         --full_cleanup
+
+    sed -i "s/TRINITY_DN/${SPECIES_IDENTIFIER}_/g" trinity_out.Trinity.fasta
     """
 }
 

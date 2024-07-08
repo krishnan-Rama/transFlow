@@ -38,10 +38,10 @@ workflow {
   rcorrectRead2Channel = rcorrector.out.rcorrectReads.flatMap { it[2] }.collect()
 
   ConcatenateReads(rcorrectRead1Channel, rcorrectRead2Channel)
-  Trinity(ConcatenateReads.out.concatenatedRead1, ConcatenateReads.out.concatenatedRead2)
+  Trinity(ConcatenateReads.out.concatenatedRead1, ConcatenateReads.out.concatenatedRead2, params.SPECIES_IDENTIFIER)
   Evigene(Trinity.out.trinityFasta)
   Trinity_stats(Trinity.out.trinityFasta, Evigene.out.annotated_okay_fasta)
   BUSCO(Evigene.out.annotated_okay_fasta, Trinity.out.trinityFasta)
-   //trinitymapping(Evigene.out.annotated_okay_fasta, rcorrector.out.rcorrectReads )
+  trinitymapping(Evigene.out.annotated_okay_fasta, rcorrector.out.rcorrectReads )
 }
 

@@ -5,7 +5,7 @@ process trinitymapping {
     tag "${sample_id}"
     label 'trinitymapping'
 
-    publishDir "${params.outputDir}/trinitymapping", mode: 'copy', pattern: '*'
+    publishDir "${params.outputDir}/trinitymapping", mode: 'copy'
 
     input:
     tuple path(annotated_okay_fasta)
@@ -16,7 +16,7 @@ process trinitymapping {
 
     script:
     """
-    $TRINITY_HOME/util/align_and_estimate_abundance.pl \
+    \$TRINITY_HOME/util/align_and_estimate_abundance.pl \
      --transcripts ${annotated_okay_fasta} \
      --seqType fq \
      --left ${filteredRead1} \
