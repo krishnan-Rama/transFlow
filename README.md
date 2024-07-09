@@ -30,7 +30,7 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 4.  Run the pipeline by executing the command `./deploy.sh`  
 
-6. The prompt will ask you to type the preferred/available HPC partition name to submit the job; simply type the name.
+6. The prompt will ask you to enter your preferred HPC partition name to submit the job and the species identifier (e.g. Hsap for _Homo sapiens_), simply type the name and return.
 
 ### Workflow Diagram
 ![workflow](https://github.com/krishnan-Rama/transpipeline_containerised/assets/104147619/892ae381-69b3-45e8-a485-ccd50cf1794a)
