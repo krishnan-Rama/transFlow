@@ -18,7 +18,7 @@ To use this pipeline you will need:
 
 ## Installation and deployment
 
-1. Install the nf-transFlow pipeline resources into your HPC cluster directory in which you will be performing the assembly:  
+1. Install the nf-transFlow pipeline resources into your HPC cluster directory where you will be performing the analysis:  
 
 ```
 git clone https://github.com/krishnan-Rama/transFlow.git
