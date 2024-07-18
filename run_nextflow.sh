@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=nf-deploy
-#SBATCH --partition=epyc
+#SBATCH --partition=<HPC queue>
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=4G
 #SBATCH --error="logs/%J.err"
