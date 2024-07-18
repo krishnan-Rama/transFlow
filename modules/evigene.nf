@@ -12,6 +12,7 @@ process Evigene {
 
     output:
     tuple path("okayset/*.okay.Trinity.fasta"), emit: annotated_okay_fasta
+    tuple path("okayset/*.okay.Trinity.aa"), emit: annotated_okay_aa   
     path("okayset/*")
     path("dropset/*")
 

@@ -27,6 +27,7 @@ process Trinity {
         --full_cleanup
 
     sed -i "s/TRINITY_DN/${SPECIES_IDENTIFIER}_/g" trinity_out.Trinity.fasta
-    """
+    sed -i "s/TRINITY_DN/${SPECIES_IDENTIFIER}_/g" trinity_out.Trinity.fasta.gene_trans_map
+    """    
 }
 
