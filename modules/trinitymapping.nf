@@ -3,21 +3,31 @@
 process trinitymapping {
 
     tag "${sample_id}"
-    label 'trinitymapping'
+    label 'Mapping'
 
     publishDir "${params.outputDir}/trinitymapping", mode: 'copy'
 
     input:
-    tuple path(annotated_okay_fasta)
+    path (annotated_okay_fasta) 
+    path (okay_trans_map)
     tuple val(sample_id), path(filteredRead1), path(filteredRead2)
 
     output:
-    tuple path("rsemdir/${sample_id}")
+    path ("rsemdir/*")
+    tuple path("rsemdir/${sample_id}/*"), emit: rsem_dir
+    path ("rsemdir/${sample_id}/RSEM.isoforms.results"), emit: isoforms
 
     script:
     """
+    echo "Processing sample ID: ${sample_id}"
+    mkdir -p ${sample_id}
+    cp ${annotated_okay_fasta} ${sample_id}/${annotated_okay_fasta}
+    cp ${okay_trans_map} ${sample_id}/${okay_trans_map}
+
+    echo "Running Trinity align_and_estimate_abundance.pl for sample ID: ${sample_id}"
+
     \$TRINITY_HOME/util/align_and_estimate_abundance.pl \
-     --transcripts ${annotated_okay_fasta} \
+     --transcripts ${sample_id}/${annotated_okay_fasta} \
      --seqType fq \
      --left ${filteredRead1} \
      --right ${filteredRead2} \
@@ -28,5 +38,8 @@ process trinitymapping {
      --prep_reference \
      --bowtie2_RSEM "--no-mixed --no-discordant --gbar 1000 -k 200 --end-to-end -N 1 --mp 4" \
       --output_dir rsemdir/${sample_id}
+
+    echo "Finished processing sample ID: ${sample_id}"
     """
 }
+
