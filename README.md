@@ -32,6 +32,8 @@ git clone https://github.com/krishnan-Rama/transFlow.git
 
 6. The prompt will ask you to enter your preferred HPC partition name to submit the job and the species identifier (e.g. Hsap for _Homo sapiens_), simply type the name and return.
 
+**Results location:** The results for each step in the pipeleine will be in the **`./output`** directory.   
+
 ### Workflow diagram with pipeline characteristics
 ![workflow](https://github.com/krishnan-Rama/transpipeline_containerised/assets/104147619/892ae381-69b3-45e8-a485-ccd50cf1794a)
 
